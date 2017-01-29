@@ -1,0 +1,12 @@
+import nightmare from 'nightmare'
+
+it('should receive a server response', (done) => {
+	nightmare()
+	.goto('http://127.0.0.1:33435')
+	.wait(500)
+	.click('button.send')
+	.evaluate(() => document.querySelector('ul li').innerText)
+	.end()
+	.then((v) => { expect(v).toBe("Hello from obsidian-server!"); done(); })
+	.catch((e) => console.error('Click failed:', e));
+});

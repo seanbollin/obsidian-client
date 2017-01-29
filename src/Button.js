@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 
-class Button extends React.Component {
+class Button extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
-
-		this.handleClick = this.handleClick.bind(this);
-	}
-
-	handleClick() {
-		console.log('hello');
+		this.state = {text: props.text};
 	}
 
 	render() {
 		return (
-			<button onClick={this.handleClick}>
-				Send to server
+			<button className={this.props.class} onClick={this.props.onClick}>
+				{this.state.text}
 			</button>
 		);
 	}
