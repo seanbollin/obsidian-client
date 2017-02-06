@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   connect() {
-    this.socket = new WebSocket("ws://127.0.0.1:33435");
+    this.socket = new WebSocket("ws://159.203.196.212:33435");
     
     this.socket.onmessage =  (e) => { 
       console.log(e.data);
