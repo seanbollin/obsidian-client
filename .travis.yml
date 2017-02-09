@@ -8,7 +8,7 @@ notifications:
   email: false
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_84a53e325742_key -iv $encrypted_84a53e325742_iv -in deploy/deploy-key.enc -out deploy/deploy-key -d
+  - openssl aes-256-cbc -K $encrypted_732124946efe_key -iv $encrypted_732124946efe_iv -in deploy/deploy-key.enc -out deploy/deploy-key -d
   - sudo apt-add-repository ppa:ansible/ansible -y
   - sudo apt-get -qq update
   - sudo apt-get install software-properties-common
