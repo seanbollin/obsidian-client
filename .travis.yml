@@ -18,5 +18,6 @@ before_install:
 language: javascript
 
 script:
+  - npm test
   - chmod 600 deploy/deploy-key
   - ansible-playbook deploy/deploy.yml -i deploy/hosts -vvvv --private-key deploy/deploy-key
