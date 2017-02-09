@@ -1,0 +1,22 @@
+sudo: required
+dist: trusty
+
+env:
+  - ANSIBLE_HOST_KEY_CHECKING=False
+
+notifications:
+  email: false
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_84a53e325742_key -iv $encrypted_84a53e325742_iv -in deploy/deploy-key.enc -out deploy/deploy-key -d
+  - sudo apt-add-repository ppa:ansible/ansible -y
+  - sudo apt-get -qq update
+  - sudo apt-get install software-properties-common
+  - sudo apt-get install ansible
+  - sudo npm install
+
+language: javascript
+
+script:
+  - chmod 600 deploy/deploy-key
+  - ansible-playbook deploy/deploy.yml -i deploy/hosts -vvvv --private-key deploy/deploy-key

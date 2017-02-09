@@ -1,0 +1,27 @@
+---
+- hosts: servers
+  remote_user: root
+
+  tasks:
+  - name: ensure git is installed
+    apt: name=git state=present
+
+  - name: ensure server group exists
+    group: name=server
+  
+  - name: ensure server user exists
+    user: name=server group=server 
+
+  - name: update repositories cache and install "python-pip" package
+    apt: name=python-pip update_cache=yes
+
+  - name: install obsidian-server systemd unit file
+    template: src=obsidian-client.j2 dest=/etc/systemd/system/obsidian-client.service
+
+  - name: blow away previous git clone
+    file: path=/home/server/obsidian-client state=absent
+
+  - name: checkout obsidian-client repo from github
+    become: yes
+    become_user: server
+    git: repo=ssh://git@github.com/seanbollin/obsidian-client.git key_file=/home/server/.ssh/id_rsa accept_hostkey=yes dest=/home/server/obsidian-client update=yes
