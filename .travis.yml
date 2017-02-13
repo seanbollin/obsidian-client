@@ -13,6 +13,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install software-properties-common
   - sudo apt-get install ansible
+  - sudo apt-get install nodejs
   - sudo npm install
 
 language: javascript
