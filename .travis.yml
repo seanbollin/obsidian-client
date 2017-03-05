@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get install nodejs
   - sudo npm install
   - sudo npm run build
-  - cd build && python -m SimpleHTTPServer 8000 &> /dev/null &
+  - cd build && sudo python -m SimpleHTTPServer 8000 &
   - curl http://127.0.0.1:8000
   - ps aux | grep python
   - npm test
