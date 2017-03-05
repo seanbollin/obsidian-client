@@ -2,7 +2,7 @@ import nightmare from 'nightmare'
 
 it('should receive a server response', (done) => {
 	nightmare()
-	.goto('http://localhost:8000')
+	.goto('http://0.0.0.0:8000')
 	.wait(5000)
 	.click('button.send')
 	.wait(5000)
