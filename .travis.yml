@@ -19,6 +19,7 @@ before_install:
   - sudo npm install
   - sudo npm run build
   - cd build && sudo python -m SimpleHTTPServer 8000 &
+  - sleep 5
   - curl http://127.0.0.1:8000
   - ps aux | grep python
   - npm test
