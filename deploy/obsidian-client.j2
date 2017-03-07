@@ -2,7 +2,7 @@
 Description=Obsidian Client
 
 [Service]
-ExecStart=/usr/local/bin/obsidian-client
+ExecStart=pushstate-server /home/server/obsidian-client/build
 User=server
 Group=server
 Restart=always
