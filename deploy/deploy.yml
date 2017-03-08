@@ -16,6 +16,7 @@
     file: 
       src: /usr/bin/nodejs
       dest: /usr/bin/node
+      state: link
 
   - name: Install pushstate-server
     npm:

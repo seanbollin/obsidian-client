@@ -2,4 +2,4 @@
 
 # obsidian-client
 
-
+HTML/Javascript web client for ObsidianMUD.  Uses websockets to communicate with the [obsidian-server](https://github.com/seanbollin/obsidian-server) project.
