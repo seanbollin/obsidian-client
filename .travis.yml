@@ -33,6 +33,4 @@ script:
   - cd build && python -m SimpleHTTPServer 8000 &> /dev/null &
   - sleep 3
   - npm test
-
-after_success:
   - ansible-playbook deploy/deploy.yml -i deploy/hosts -vvvv --private-key deploy/deploy-key

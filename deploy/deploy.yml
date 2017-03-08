@@ -12,6 +12,10 @@
   - name: ensure npm is installed
     apt: name=npm state=present
 
+  - file: 
+    src: /usr/bin/nodejs
+    dest: /usr/bin/node
+
   - name: Install pushstate-server
     npm:
       name: pushstate-server
