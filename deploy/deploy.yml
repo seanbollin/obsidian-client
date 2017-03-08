@@ -47,7 +47,7 @@
     npm:
       path: /home/server/obsidian-client
 
-  - name: install dependencies with conan
+  - name: build application
     command: npm run build
     args:
       chdir: /home/server/obsidian-client/
