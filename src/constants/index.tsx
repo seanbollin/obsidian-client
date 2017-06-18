@@ -1,0 +1,8 @@
+export const CONNECT_TO_SERVER = 'CONNECT_TO_SERVER';
+export type CONNECT_TO_SERVER = typeof CONNECT_TO_SERVER;
+
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+export type SEND_MESSAGE = typeof SEND_MESSAGE;
+
+export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
+export type RECEIVE_MESSAGE = typeof RECEIVE_MESSAGE;
