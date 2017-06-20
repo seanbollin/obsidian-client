@@ -8,11 +8,11 @@ import {StoreState} from './types/index';
 
 import './index.css';
 
-const store = createStore<StoreState>(messages);
+const store = createStore<StoreState>(messages, { responses: [] });
 
 ReactDOM.render(
   <Provider store={store}>
-    <App responses={[]} connectToServer={() => {}} />
+    <App />
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

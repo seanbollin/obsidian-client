@@ -14,22 +14,24 @@ export interface ReceiveMessage {
   data: any;
 }
 
+export type ServerMessage = ConnectToServer | SendMessage | ReceiveMessage;
+
 export function connectToServer(): ConnectToServer {
   return {
     type: constants.CONNECT_TO_SERVER
-  }
+  };
 }
 
 export function sendMessage(msg: any): SendMessage {
   return {
     type: constants.SEND_MESSAGE,
     data: msg
-  }
+  };
 }
 
 export function receiveMessage(msg: any): ReceiveMessage {
   return {
     type: constants.RECEIVE_MESSAGE,
     data: msg
-  }
+  };
 }

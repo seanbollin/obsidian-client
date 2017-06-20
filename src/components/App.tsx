@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Button from './Button'
-import MessageList from './MessageList'
+import Button from './Button';
+import MessageList from './MessageList';
 import './App.css';
 
 interface Props {
