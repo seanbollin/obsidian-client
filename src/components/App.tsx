@@ -6,14 +6,21 @@ import './App.css';
 interface Props {
   responses: Array<any>;
   connectToServer: () => void;
+  sendToServer: (msg: any) => void;
+  disconnectFromServer: () => void;
 }
 
-function App({ connectToServer, responses }: Props) {
+function App({ responses, connectToServer, sendToServer, disconnectFromServer }: Props) {
   connectToServer();
+
+  function sendToServerProxy() {
+    sendToServer("Hello from obsidian-client!");
+  }
+
   return (
     <div className="app">
-      <Button text="Send" className="send" onClick={() => {}} />
-      <Button text="Disconnect" className="disconnect" onClick={() => {}} />
+      <Button text="Send" className="send" onClick={sendToServerProxy} />
+      <Button text="Disconnect" className="disconnect" onClick={disconnectFromServer} />
       <MessageList responses={responses} />
     </div>
   );

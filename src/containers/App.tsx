@@ -9,9 +9,11 @@ export function mapStateToProps({ responses }: StoreState) {
   };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.ConnectToServer>) {
+export function mapDispatchToProps(dispatch: Dispatch<actions.ConnectMessage>) {
   return {
-    connectToServer: () => dispatch(actions.connectToServer())
+    connectToServer: () => dispatch(actions.connectToServer()),
+    sendToServer: (msg: any) => dispatch(actions.sendToServer(msg)),
+    disconnectFromServer: () => dispatch(actions.disconnectFromServer())
   };
 }
 
